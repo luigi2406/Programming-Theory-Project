@@ -17,5 +17,4 @@ public class MainUIManager : MonoBehaviour
 		text.text = eventText;
 	}
 
-
 }

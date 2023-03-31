@@ -35,6 +35,7 @@ public class MainManager : MonoBehaviour
 		this.animal = animal;
 	}
 
+	// ABSTRACTION
 	void InitializeNames()
 	{
 		SetAnimal("Cat");

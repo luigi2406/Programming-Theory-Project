@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
+// INHERITANCE
 public abstract class Animal : MonoBehaviour
 {
 	private MainManager mainManager;
@@ -11,7 +12,7 @@ public abstract class Animal : MonoBehaviour
 	private MainUIManager mainUIManager;
 	[SerializeField]
 	private string _name;
-	public string Name
+	public string Name // ENCAPSULATION
 	{
 		get { return _name; }
 		set

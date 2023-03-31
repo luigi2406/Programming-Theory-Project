@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Cat : Animal
 {
+	// POLYMORPHISM
 	public override string Pet()
 	{
 		return "Meow";
