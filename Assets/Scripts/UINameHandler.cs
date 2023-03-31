@@ -15,9 +15,8 @@ public class UINameHandler : MonoBehaviour
         text = GetComponent<TextMeshProUGUI>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        text.text = animal.Name;
+    public void UpdateAnimalNameUI()
+	{
+        //text.text = animal.Name;
     }
 }

@@ -1,11 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public abstract class Animal : MonoBehaviour
 {
 	private MainManager mainManager;
-	[SerializeField] private MainUIManager mainUIManager;
+	private TextMeshProUGUI nameUI;
+	[SerializeField]
+	private MainUIManager mainUIManager;
 	[SerializeField]
 	private string _name;
 	public string Name
@@ -16,6 +19,7 @@ public abstract class Animal : MonoBehaviour
 			if (value.Length < 10)
 			{
 				_name = value;
+				nameUI.text = value;
 			}
 			else
 			{
@@ -24,9 +28,11 @@ public abstract class Animal : MonoBehaviour
 		}
 	}
 
-	protected void Start()
+	protected void Awake()
 	{
 		mainManager = GameObject.Find("MainManager").GetComponent<MainManager>();
+		nameUI = GetComponentInChildren<TextMeshProUGUI>();
+		nameUI.text = _name;
 	}
 
 	public virtual string Eat(string food)

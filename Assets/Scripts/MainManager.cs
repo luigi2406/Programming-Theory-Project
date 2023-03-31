@@ -10,13 +10,16 @@ public class MainManager : MonoBehaviour
 
 	private void Start()
 	{
-		SetAnimal("Cat");
+		if (MenuManager.Instance != null)
+		{
+			InitializeNames();
+		}
 	}
 
 	// Update is called once per frame
 	void Update()
     {
-		if (Input.GetKeyDown(KeyCode.Space) && Food.Length > 0)
+		if (Input.GetKeyDown(KeyCode.Space) && animal != null && Food.Length > 0)
 		{
             uiManager.SetEventText(animal.Eat(Food));
 		}
@@ -30,5 +33,13 @@ public class MainManager : MonoBehaviour
 	public void SetAnimal(Animal animal)
 	{
 		this.animal = animal;
+	}
+
+	void InitializeNames()
+	{
+		SetAnimal("Cat");
+		animal.Name = MenuManager.Instance.CatName;
+		SetAnimal("Dog");
+		animal.Name = MenuManager.Instance.DogName;
 	}
 }
